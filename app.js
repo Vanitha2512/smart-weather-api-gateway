@@ -2,6 +2,9 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+app.get('/', (req, res) => {
+  res.send('🌐 Smart Weather API Gateway is live!');
+});
 
 const app = express();
 app.use(cors());
