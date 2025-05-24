@@ -1,12 +1,9 @@
-// apiGateway.js
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-app.get('/', (req, res) => {
-  res.send('🌐 Smart Weather API Gateway is live!');
-});
 
-const app = express();
+const app = express(); // ✅ This MUST come first!
+
 app.use(cors());
 app.use(express.json());
 
@@ -16,6 +13,10 @@ const weatherServiceUrl = 'http://localhost:3002';
 const forecastServiceUrl = 'http://localhost:3003';
 const paymentServiceUrl = 'http://localhost:3004';
 
+// ✅ Root Route
+app.get('/', (req, res) => {
+  res.send('🌐 Smart Weather API Gateway is live!');
+});
 
 // 🌍 Location
 app.get('/location', async (req, res) => {
@@ -62,4 +63,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🛡️ API Gateway running on http://localhost:${PORT}`);
 });
-
