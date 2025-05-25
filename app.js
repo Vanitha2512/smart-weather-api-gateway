@@ -8,12 +8,10 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Deployed Service URLs on Render
-const locationServiceUrl = 'http://localhost:3001';
-const weatherServiceUrl = 'http://localhost:3002';
-const forecastServiceUrl = 'http://localhost:3003';
-const paymentServiceUrl = 'http://localhost:3004';
-
-// ✅ Root Route
+const locationServiceUrl = 'https://smart-weather-v2-location.onrender.com';
+const weatherServiceUrl = 'https://smart-weather-v2-weather-services.onrender.com';
+const forecastServiceUrl = 'https://smart-weather-v2-forecast.onrender.com';
+const paymentServiceUrl = 'https://smart-weather-v2-payment-service.onrender.com';
 app.get('/', (req, res) => {
   res.send('🌐 Smart Weather API Gateway is live!');
 });
