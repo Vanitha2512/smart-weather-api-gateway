@@ -53,6 +53,7 @@ app.post('/pay', async (req, res) => {
     const response = await axios.post(`${paymentServiceUrl}/pay`, req.body);
     res.json(response.data);
   } catch (err) {
+    console.error("❌ Payment error:", err.message); // Add this for debugging
     res.status(err.response?.status || 500).json({ error: 'Payment Service failed' });
   }
 });
